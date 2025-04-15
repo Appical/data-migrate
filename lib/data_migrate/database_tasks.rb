@@ -24,7 +24,7 @@ module DataMigrate
 
       def with_temporary_connection(db_config) # :nodoc:
         with_temporary_pool(db_config) do |pool|
-          yield pool.connection
+          yield pool.connections.first
         end
       end
 
